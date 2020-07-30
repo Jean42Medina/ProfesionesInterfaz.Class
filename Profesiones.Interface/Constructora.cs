@@ -7,7 +7,20 @@ namespace Profesiones.Interface
     class Constructora 
     {
         public ICarpintero Carpintero { get; set; }
-        
+        public string ContratarCarpintero(ICarpintero carpintero) 
+        {
+            Carpintero = carpintero;
+            return " Contrate un Carpintero";
+        }
+        public string construirMesa ()
+        {
+            return Carpintero.Medir() + "mesa" 
+                  + Carpintero.Diseñar() + "mesa"
+                  + Carpintero.Serruchar() + "mesa"
+                  + Carpintero.Lijar() + "mesa"
+                  + Carpintero.Lacar() + "mesa";
+        }
+
         public string ContratarCarpintero() 
         {
             Carpintero = new Carpintero();
