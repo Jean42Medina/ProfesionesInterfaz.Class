@@ -4,11 +4,10 @@ using System.Text;
 
 namespace Profesiones.Interface
 {
-    class Constructora
+    class Constructora 
     {
-        public Carpintero Carpintero { get; set; }
-        public CarpinteroModerno CarpinteroModerno { get; set; }
-
+        public ICarpintero Carpintero { get; set; }
+        
         public string ContratarCarpintero() 
         {
             Carpintero = new Carpintero();
@@ -16,8 +15,14 @@ namespace Profesiones.Interface
         }
         public string ContratarCarpinteroModerno()
         {
-            CarpinteroModerno = new CarpinteroModerno();
+            Carpintero = new CarpinteroModerno();
             return "Contrate un carpintero Moderno";
+        }
+        
+        public string ContratarOtroModerno()
+        {
+            Carpintero = new CarpinteroMusical();
+            return "Contrate un carpintero Muscial";
         }
     }
 }

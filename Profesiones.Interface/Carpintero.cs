@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Profesiones.Interface
 {
-    public partial class Carpintero
+    public class Carpintero: ICarpintero
     {
         public string Diseñar()
         {
