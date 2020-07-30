@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Profesiones.Interface
+﻿namespace Profesiones.Interface
 {
-    interface ICarpintero
+   public  interface ICarpintero
     {
          string Diseñar();
          string Medir();

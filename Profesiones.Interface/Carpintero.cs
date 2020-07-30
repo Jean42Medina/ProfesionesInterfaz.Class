@@ -1,7 +1,6 @@
-﻿using System;
-namespace Profesiones.Interface
+﻿namespace Profesiones.Interface
 {
-    public class Carpintero: ICarpintero
+    public class Carpintero : ICarpintero
     {
         public string Diseñar()
         {
@@ -13,7 +12,7 @@ namespace Profesiones.Interface
         }
         public string Serruchar()
         {
-            return "Estoy serruchando a pulso";
+            return "Estoy serruchando";
         }
         public string Clavar()
         {
