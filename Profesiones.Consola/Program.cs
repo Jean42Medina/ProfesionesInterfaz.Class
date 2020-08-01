@@ -1,8 +1,8 @@
 ﻿using System;
-using Profesiones.Interface;
-using System;
-using Profesiones.Interface;
-
+using Profesiones.Implementacion;
+using Profesiones.Negocio;
+using Profesiones.AccesoDatos;
+using Profesiones.Entidad;
 
 namespace Profesiones.Consola
 {
@@ -13,12 +13,22 @@ namespace Profesiones.Consola
             Console.WriteLine("Hello World!");
             Constructora MiConstructora = new Constructora();
 
-            MiConstructora.ContratarCarpintero(new Carpintero());
+            MiConstructora.ContratarCarpintero(new CarpinteroEstandar());
             MiConstructora.ConstruirMesa();
+            
+            var carpintero1 = new CarpinteroModerno();
             MiConstructora.ContratarCarpintero(new CarpinteroModerno());
             MiConstructora.ConstruirMesa();
-            MiConstructora.ContratarCarpintero(new CarpinteroMusical());
+
+            var carpintero = new CarpinteroMusical();
+            carpintero.Id = 1;
+
+            MiConstructora.ContratarCarpintero(carpintero);
             MiConstructora.ConstruirMesa();
+
+            AplicationDbContext aplicationDbContext = new AplicationDbContext();
+            aplicationDbContext.Carpinteros.Add(new Carpintero ());
+            aplicationDbContext.SaveChanges();
             Console.ReadKey();
         }
     }

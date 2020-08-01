@@ -1,7 +1,17 @@
-﻿namespace Profesiones.Interface
+﻿using System.Collections.Generic;
+using Profesiones.Interface;
+
+namespace Profesiones.Implementacion
 {
-    public class Carpintero : ICarpintero
+    public class CarpinteroEstandar : ICarpintero
     {
+        private List<string> materialesParaClavar; // Ejemplo: clavo, tachuelas => materiales para 
+        private string nombre; // Ejemplo: Juan
+
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+        public List<string> MaterialesparaClavar { get { return materialesParaClavar; } set { materialesParaClavar = value; } }
+
+        // Metodo
         public string Diseñar()
         {
             return "Estoy diseñando";
