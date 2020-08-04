@@ -7,4 +7,7 @@ namespace Profesiones.AccesoDatos
     {
         public DbSet<Carpintero> Carpinteros { get; set; }
     }
+      //AplicationDbContext aplicationDbContext = new AplicationDbContext();
+      //aplicationDbContext.Carpinteros.Add(new Carpintero());
+      //aplicationDbContext.SaveChanges();
 }

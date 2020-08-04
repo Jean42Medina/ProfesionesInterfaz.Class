@@ -10,15 +10,21 @@ namespace Profesiones.Consola
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hola Amigos ");
             Constructora MiConstructora = new Constructora();
 
-            MiConstructora.ContratarCarpintero(new CarpinteroEstandar());
+            var carpintero2 = new CarpinteroEstandar();
+            MiConstructora.ContratarCarpintero(carpintero2);
             MiConstructora.ConstruirMesa();
             
-            var carpintero1 = new CarpinteroModerno();
-            MiConstructora.ContratarCarpintero(new CarpinteroModerno());
-            MiConstructora.ConstruirMesa();
+            var carpintero1 = new CarpinteroModerno 
+            {
+                Nombre = "juan",
+                Apellido = "Aguirre"
+            };
+
+            var carpinteroModerno = MiConstructora.ContratarCarpintero(carpintero1);
+            var carpinModernoConstruir = MiConstructora.ConstruirMesa();
 
             var carpintero = new CarpinteroMusical();
             carpintero.Id = 1;
@@ -26,10 +32,9 @@ namespace Profesiones.Consola
             MiConstructora.ContratarCarpintero(carpintero);
             MiConstructora.ConstruirMesa();
 
-            AplicationDbContext aplicationDbContext = new AplicationDbContext();
-            aplicationDbContext.Carpinteros.Add(new Carpintero ());
-            aplicationDbContext.SaveChanges();
+            Console.WriteLine($"Este carpintero {carpintero1.Nombre} {carpintero1.Apellido} {carpinteroModerno} {carpinModernoConstruir} ");
             Console.ReadKey();
+
         }
     }
 }
